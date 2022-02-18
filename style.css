@@ -1,0 +1,136 @@
+:root {
+	--font-color: #333;
+}
+* {
+	padding : 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: 'Roboto' , sans-serif;
+	color: var(--font-color);
+}
+
+main {
+	min-width: 320px;
+	max-width: 1200px;
+	margin: 20px auto;
+	box-shadow: -13px 4px 39px -6px rgba(71,58,71,0.83);
+	border-radius: 10px;
+}
+.hero {
+	display: grid;
+	grid-template-columns: minmax(300px, 2fr) minmax(100px, 3fr);
+	grid-auto-rows: 550px;
+}
+.hero-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 50px;
+}
+.hero-info h1 {
+	margin-bottom: 24px;
+	font-size: 4rem;
+	font-weight: bold;
+}
+.hero-info p {
+	font-size: 1.5rem;
+	font-weight: 900;
+	margin-bottom: 24px;
+}
+.hero-info button {
+	border: none;
+	border-radius: 20px;
+	background-color: #FB8C00;
+	font-weight: bolder;
+	padding: 12px 24px;
+	cursor: pointer;
+}
+.hero-info button span {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-left: 10px;
+	background-image: url('./assets/icons/arrow_forward_white.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	vertical-align: text-bottom;
+}
+.hero-info button:hover {
+	background-color: aqua;
+	box-shadow: -15px 14px 43px -8px rgba(87,181,172,1);
+}
+.hero-img {
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	object-fit: contain;
+}
+.dishes {
+	margin: 100px 0;
+}
+.dishes-title {
+	margin-bottom: 50px;
+	font-weight: bold;
+	text-align: center;
+	font-size: 2rem;
+}
+.dishes-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(75px,200px));
+	grid-auto-rows: 1fr;
+	gap: 25px;
+	justify-content: center;
+}	
+.dishes-item {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.dishes-item__big {
+	grid-area: 1 / 1 / 3 / 3;
+}
+.menu {
+	margin: 25px 50px;
+	padding-bottom: 25px;
+}
+.menu-title {
+	font-size: 2rem;
+	font-weight: bolder;
+	text-align: center;
+	margin-bottom: 50px;
+}
+.menu-grid {
+	display: grid;
+	gap: 25px;
+	justify-content: center;
+	grid-template-columns: repeat(auto-fit, 150px);
+}
+.menu-grid-item {
+	background-color: #f3C5C5;
+	padding: 15px;
+	border-top-left-radius: 40px;
+}
+.menu-grid-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+@media screen and (max-width: 768px){
+	.hero {
+		grid-template-columns: minmax(300px,500px);
+		justify-content: center;
+	}
+	.hero-image {
+		display: none;
+	}
+	.dishes-grid {
+		 grid-template-columns: repeat(auto-fit, minmax(75px, 100px));
+	}
+}
